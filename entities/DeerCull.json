@@ -1,0 +1,110 @@
+{
+  "name": "DeerCull",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email of the user who recorded the cull"
+    },
+    "property_name": {
+      "type": "string",
+      "description": "Name of the property where the cull occurred"
+    },
+    "lead_contractor": {
+      "type": "string",
+      "description": "Lead contractor responsible"
+    },
+    "additional_stalkers": {
+      "type": "string",
+      "description": "Additional stalkers involved"
+    },
+    "exemptions": {
+      "type": "string",
+      "enum": [
+        "None",
+        "Out of Season",
+        "Night Shooting",
+        "Both"
+      ],
+      "description": "Any exemptions applied"
+    },
+    "land_type": {
+      "type": "string",
+      "enum": [
+        "Enclosed Woodland",
+        "Enclosed Agriculture",
+        "Open Range"
+      ],
+      "description": "Type of land"
+    },
+    "maturity": {
+      "type": "string",
+      "enum": [
+        "Stag",
+        "Hind",
+        "Calf"
+      ],
+      "description": "Maturity level of the deer"
+    },
+    "species": {
+      "type": "string",
+      "enum": [
+        "Red",
+        "Sika",
+        "Roe",
+        "Fallow",
+        "Muntjac"
+      ],
+      "description": "Species of deer"
+    },
+    "carcass_fate": {
+      "type": "string",
+      "enum": [
+        "Extracted",
+        "Hill Butchered",
+        "Left"
+      ],
+      "description": "What happened to the carcass"
+    },
+    "photo_url": {
+      "type": "string",
+      "description": "URL of the deer photo"
+    },
+    "gps_latitude": {
+      "type": "number",
+      "description": "GPS latitude coordinate"
+    },
+    "gps_longitude": {
+      "type": "number",
+      "description": "GPS longitude coordinate"
+    },
+    "gps_accuracy": {
+      "type": "number",
+      "description": "GPS accuracy in meters"
+    },
+    "cull_date_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time of the cull"
+    },
+    "synced": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether this record has been synced to server"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes or observations"
+    }
+  },
+  "required": [
+    "property_name",
+    "lead_contractor",
+    "species",
+    "maturity",
+    "carcass_fate",
+    "land_type",
+    "exemptions",
+    "cull_date_time"
+  ]
+}
